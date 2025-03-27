@@ -17,12 +17,29 @@
 
 ## 本地使用方法
 
+### 方法一：直接使用
+
 1. 克隆或下载本仓库
 ```bash
 git clone https://github.com/JXM2333/image-to-pdf-converter.git
 ```
 
 2. 在浏览器中打开`index.html`文件即可使用
+
+### 方法二：构建为可执行文件（推荐）
+
+这种方法会生成一个带有自定义图标的可执行文件，可以方便地分享给他人使用。
+
+#### 前提条件
+
+- 安装 [Node.js](https://nodejs.org/)（版本12或以上）
+
+#### 构建步骤
+
+1. 克隆或下载本仓库
+2. 运行 `build.cmd` 批处理文件
+3. 构建完成后，在 `build` 目录中找到 `图片转PDF工具.exe` 文件
+4. 可以将整个 `build` 目录分享给他人使用
 
 ## 使用说明
 
@@ -52,9 +69,20 @@ git clone https://github.com/JXM2333/image-to-pdf-converter.git
 ├── ImageProcessor.js    // 图像处理模块
 ├── PDFGenerator.js      // PDF生成模块
 ├── UIManager.js         // 界面管理模块
+├── launcher.js          // 启动器脚本
+├── set-icon.js          // 设置图标脚本
+├── build.cmd            // 构建脚本
 └── assets/
     └── icons/           // 应用图标
 ```
+
+## 构建自己的版本
+
+如果您想自定义图标或修改功能，可以按照以下步骤进行：
+
+1. 替换 `image (4).ico` 为您自己的图标文件（必须是.ico格式）
+2. 修改相关代码文件
+3. 运行 `build.cmd` 重新构建应用
 
 ## 二次开发
 
@@ -91,3 +119,5 @@ git clone https://github.com/JXM2333/image-to-pdf-converter.git
 ## 鸣谢
 
 - [jsPDF](https://github.com/parallax/jsPDF) - 用于生成PDF的JavaScript库
+- [rcedit](https://github.com/electron/node-rcedit) - 用于修改exe资源的工具
+- [pkg](https://github.com/vercel/pkg) - 用于将Node.js应用打包为可执行文件的工具
