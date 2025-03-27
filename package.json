@@ -1,0 +1,44 @@
+{
+  "name": "image-to-pdf-converter",
+  "version": "1.0.0",
+  "description": "一个简单易用的图片转PDF工具",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win --x64"
+  },
+  "author": "JXM2333",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.2.2",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.jxm2333.imagetopdf",
+    "productName": "图片转PDF工具",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!**/.github",
+      "!**/.git",
+      "!dist/**/*",
+      "!node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "image (4).ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "图片转PDF工具"
+    }
+  }
+}
